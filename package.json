@@ -1,0 +1,14 @@
+{
+    "name": "monorepo",
+    "type": "module",
+    "version": "1.0.0",
+    "private": true,
+    "packageManager": "pnpm@9.1.1",
+    "keywords": [],
+    "scripts": {
+      "webapp": "pnpm --filter web-app",
+      "desktop-app": "pnpm --filter desktop-app"
+    },
+    "devDependencies": {
+    }
+  }
