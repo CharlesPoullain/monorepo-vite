@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  packages/desktop-app:
+  apps/desktop-app:
     dependencies:
       '@tauri-apps/api':
         specifier: '>=2.0.0'
@@ -36,7 +36,7 @@ importers:
         specifier: ^2.0.22
         version: 2.1.6(typescript@5.4.5)
 
-  packages/web-app:
+  apps/web-app:
     dependencies:
       pinia:
         specifier: ^2.1.7
