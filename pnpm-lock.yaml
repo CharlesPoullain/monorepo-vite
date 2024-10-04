@@ -4,6 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    vite:
+      specifier: ^5.4.0
+      version: 5.4.8
+    vue:
+      specifier: ^3.4.29
+      version: 3.5.11
+
 importers:
 
   .: {}
@@ -17,7 +26,7 @@ importers:
         specifier: '>=2.0.0'
         version: 2.0.0
       vue:
-        specifier: ^3.3.4
+        specifier: 'catalog:'
         version: 3.5.11(typescript@5.4.5)
     devDependencies:
       '@tauri-apps/cli':
@@ -30,7 +39,7 @@ importers:
         specifier: ^5.2.2
         version: 5.4.5
       vite:
-        specifier: ^5.3.1
+        specifier: 'catalog:'
         version: 5.4.8(@types/node@20.16.10)
       vue-tsc:
         specifier: ^2.0.22
@@ -42,7 +51,7 @@ importers:
         specifier: ^2.1.7
         version: 2.2.4(typescript@5.4.5)(vue@3.5.11(typescript@5.4.5))
       vue:
-        specifier: ^3.4.29
+        specifier: 'catalog:'
         version: 3.5.11(typescript@5.4.5)
       vue-router:
         specifier: ^4.3.3
@@ -79,7 +88,7 @@ importers:
         specifier: ~5.4.0
         version: 5.4.5
       vite:
-        specifier: ^5.3.1
+        specifier: 'catalog:'
         version: 5.4.8(@types/node@20.16.10)
       vite-plugin-vue-devtools:
         specifier: ^7.3.1
@@ -90,6 +99,25 @@ importers:
       vue-tsc:
         specifier: ^2.0.21
         version: 2.1.6(typescript@5.4.5)
+
+  packages/ui:
+    dependencies:
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.11(typescript@5.6.2)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.1.4
+        version: 5.1.4(vite@5.4.8(@types/node@20.16.10))(vue@3.5.11(typescript@5.6.2))
+      typescript:
+        specifier: ^5.5.3
+        version: 5.6.2
+      vite:
+        specifier: 'catalog:'
+        version: 5.4.8(@types/node@20.16.10)
+      vue-tsc:
+        specifier: ^2.1.6
+        version: 2.1.6(typescript@5.6.2)
 
 packages:
 
@@ -1432,6 +1460,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
@@ -2092,6 +2125,11 @@ snapshots:
       vite: 5.4.8(@types/node@20.16.10)
       vue: 3.5.11(typescript@5.4.5)
 
+  '@vitejs/plugin-vue@5.1.4(vite@5.4.8(@types/node@20.16.10))(vue@3.5.11(typescript@5.6.2))':
+    dependencies:
+      vite: 5.4.8(@types/node@20.16.10)
+      vue: 3.5.11(typescript@5.6.2)
+
   '@vitest/expect@1.6.0':
     dependencies:
       '@vitest/spy': 1.6.0
@@ -2239,6 +2277,19 @@ snapshots:
     optionalDependencies:
       typescript: 5.4.5
 
+  '@vue/language-core@2.1.6(typescript@5.6.2)':
+    dependencies:
+      '@volar/language-core': 2.4.5
+      '@vue/compiler-dom': 3.5.11
+      '@vue/compiler-vue2': 2.7.16
+      '@vue/shared': 3.5.11
+      computeds: 0.0.1
+      minimatch: 9.0.5
+      muggle-string: 0.4.1
+      path-browserify: 1.0.1
+    optionalDependencies:
+      typescript: 5.6.2
+
   '@vue/reactivity@3.5.11':
     dependencies:
       '@vue/shared': 3.5.11
@@ -2260,6 +2311,12 @@ snapshots:
       '@vue/compiler-ssr': 3.5.11
       '@vue/shared': 3.5.11
       vue: 3.5.11(typescript@5.4.5)
+
+  '@vue/server-renderer@3.5.11(vue@3.5.11(typescript@5.6.2))':
+    dependencies:
+      '@vue/compiler-ssr': 3.5.11
+      '@vue/shared': 3.5.11
+      vue: 3.5.11(typescript@5.6.2)
 
   '@vue/shared@3.5.11': {}
 
@@ -2951,6 +3008,8 @@ snapshots:
 
   typescript@5.4.5: {}
 
+  typescript@5.6.2: {}
+
   ufo@1.5.4: {}
 
   undici-types@6.19.8: {}
@@ -3103,6 +3162,13 @@ snapshots:
       semver: 7.6.3
       typescript: 5.4.5
 
+  vue-tsc@2.1.6(typescript@5.6.2):
+    dependencies:
+      '@volar/typescript': 2.4.5
+      '@vue/language-core': 2.1.6(typescript@5.6.2)
+      semver: 7.6.3
+      typescript: 5.6.2
+
   vue@3.5.11(typescript@5.4.5):
     dependencies:
       '@vue/compiler-dom': 3.5.11
@@ -3112,6 +3178,16 @@ snapshots:
       '@vue/shared': 3.5.11
     optionalDependencies:
       typescript: 5.4.5
+
+  vue@3.5.11(typescript@5.6.2):
+    dependencies:
+      '@vue/compiler-dom': 3.5.11
+      '@vue/compiler-sfc': 3.5.11
+      '@vue/runtime-dom': 3.5.11
+      '@vue/server-renderer': 3.5.11(vue@3.5.11(typescript@5.6.2))
+      '@vue/shared': 3.5.11
+    optionalDependencies:
+      typescript: 5.6.2
 
   w3c-xmlserializer@5.0.0:
     dependencies:
